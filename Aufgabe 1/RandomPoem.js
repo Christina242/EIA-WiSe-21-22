@@ -11,13 +11,10 @@ var Aufgabe1;
     function getVerse(_subjects, _predicates, _objects) {
         var verse = "";
         var outcomeSubjects = Math.floor(Math.random() * _subjects.length);
-        console.log(outcomeSubjects);
         verse += _subjects.splice(outcomeSubjects, 1) + " ";
         var outcomePredicates = Math.floor(Math.random() * _predicates.length);
-        console.log(outcomePredicates);
         verse += _predicates.splice(outcomePredicates, 1) + " ";
         var outcomeObjects = Math.floor(Math.random() * _objects.length);
-        console.log(outcomeObjects);
         verse += _objects.splice(outcomeObjects, 1) + " ";
         return verse;
     }
