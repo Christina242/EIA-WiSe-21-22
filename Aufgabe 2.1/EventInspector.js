@@ -1,6 +1,8 @@
 var EventExercise;
 (function (EventExercise) {
     window.addEventListener("load", handleLoad);
+    var mousex;
+    var mousey;
     //1. Funktion erstellen
     function handleLoad(_event) {
         document.addEventListener("mouseMove", setInfoBox);
@@ -17,8 +19,8 @@ var EventExercise;
     }
     // zweite Funktion erstellen, Kooordinaten der
     function setInfoBox(_event) {
-        var mousex = _event.x;
-        var mousey = _event.y;
+        mousex = _event.x;
+        mousey = _event.y;
         document.getElementById("span").innerHTML = "Position X = " + mousex + ", Position Y = " + mousey;
         document.getElementById("span").style.left = _event.x + "px";
         document.getElementById("span").style.top = _event.y + "px";
@@ -31,4 +33,5 @@ var EventExercise;
         console.log(_event);
     }
 })(EventExercise || (EventExercise = {}));
+// Leider zeigt mir mein Span keine Info an und ich hab es nicht geschaft herauszufinden warum :(
 //# sourceMappingURL=EventInspector.js.map

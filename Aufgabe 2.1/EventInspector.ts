@@ -1,6 +1,11 @@
+// Gruppenarbeit mit Debbie, Lisa und Asya
 namespace EventExercise {
     window.addEventListener("load", handleLoad);
-    
+
+    let mousex: number;
+    let mousey: number;
+
+
     //1. Funktion erstellen
     function handleLoad(_event: Event): void {
 
@@ -22,8 +27,8 @@ namespace EventExercise {
 
     // zweite Funktion erstellen, Kooordinaten der
     function setInfoBox(_event: MouseEvent): void {
-        let mousex: number = _event.x;
-        let mousey: number = _event.y;
+        mousex = _event.x;
+        mousey = _event.y;
 
         document.getElementById("span").innerHTML = "Position X = " + mousex + ", Position Y = " + mousey;
 
@@ -33,10 +38,11 @@ namespace EventExercise {
 
     //dritte Funktion erstellen
     function logInfo(_event: Event): void {
-            console.log("Target: " + _event.target);
-            console.log("CurrentTarget: " + _event.currentTarget);
-            console.log("Type Event: " + _event.type);
-            console.log(_event);
-    }}
+        console.log("Target: " + _event.target);
+        console.log("CurrentTarget: " + _event.currentTarget);
+        console.log("Type Event: " + _event.type);
+        console.log(_event);
+    }
+}
 
     // Leider zeigt mir mein Span keine Info an und ich hab es nicht geschaft herauszufinden warum :(
