@@ -1,0 +1,24 @@
+#div0 {
+    background-color: #0000ff;
+    height: 500px;
+    width: 500px;
+    position: absolute;
+}
+
+#div1 {
+    background-color: #ff0000;
+    height: 500px;
+    width: 500px;
+    margin-left: 800px;
+    position: absolute;
+}
+
+#span {
+    position: fixed;
+    width: 250px;
+    height: 100px;
+    text-align: center;
+    color: white;
+    border-style: dotted;
+    background-color: #00ff00;
+}
