@@ -11,17 +11,17 @@ namespace EventExercise {
 
         document.addEventListener("mouseMove", setInfoBox);
         document.addEventListener("click", logInfo);
-        document.addEventListener("keyUp", logInfo);
+        document.addEventListener("keyup", logInfo);
 
         //Install Listener auf body 
         document.body.addEventListener("click", logInfo);
-        document.body.addEventListener("keyUp", logInfo);
+        document.body.addEventListener("keyup", logInfo);
 
         //Install Listener auf Id
-        document.getElementById("div0").addEventListener("keyUp", logInfo);
+        document.getElementById("div0").addEventListener("keyup", logInfo);
         document.getElementById("div0").addEventListener("click", logInfo);
 
-        document.getElementById("div1").addEventListener("keyUp", logInfo);
+        document.getElementById("div1").addEventListener("keyup", logInfo);
         document.getElementById("div1").addEventListener("click", logInfo);
     }
 
