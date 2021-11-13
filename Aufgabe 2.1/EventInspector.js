@@ -1,9 +1,10 @@
+"use strict";
 // Gruppenarbeit mit Debbie, Lisa und Asya
 var EventExercise;
 (function (EventExercise) {
     window.addEventListener("load", handleLoad);
-    var mousex;
-    var mousey;
+    let mousex;
+    let mousey;
     //1. Funktion erstellen
     function handleLoad(_event) {
         document.addEventListener("mouseMove", setInfoBox);

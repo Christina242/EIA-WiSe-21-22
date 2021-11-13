@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Memory.css">
+    <script src="Memory.js"></script>
+    <title>Memory</title>
+</head>
+<body>
+    <h1>Memory</h1>
+    <form action="">
+    <div id= "form" >
+<fieldset id= "sizeCards" >
+    <legend> Size Cards </legend>
+    <input type="range" name="Slider" min="1" max="3" step="1" value="0">
+</fieldset>
+<br>
+<fieldset id= "Color" >
+    <legend> Color </legend>
+    Backround
+    <input type="color" name="Color" placeholder="red" id="backround" value="#ff0000">
+    Cards
+    <input type="color" name="Color" placeholder="blue" id="cards" value="#0000ff">
+    Font
+    <input type="color" name="Color" placeholder="green" id="fontcolor" value="#00ff00">
+</fieldset>
+    <br>
+<fieldset id= "font" >
+    <legend> Font </legend>
+    <input type="radio" name="Radiogroup" value="radio1" id="radio1">
+    <label id = "font1" for="radio1">Segoe UI</label>
+    <input type="radio" name="Radiogroup" value="radio2" id="radio2">
+    <label id = "font2" for="radio2">Franklin Gothic Medium</label>
+    <input type="radio" name="Radiogroup" value="radio3" id="radio3">
+    <label id = "font3" for="radio3">Times New Roman</label>
+</fieldset>
+<br>
+<fieldset id= "time" >
+<legend> Time </legend>
+<select name="Select" id="select">
+    <option value="option1" selected>One minute</option>
+    <option value="option2">Two minutes</option>
+    <option value="option2" >Three minutes</option>
+</select>
+</fieldset>
+<br>
+<fieldset id= "word" >
+    <legend> Input word </legend>
+    <input type="text" name="Text" placeholder="Choose your word" required="">
+</fieldset>
+<br>
+<button id= "start">START</button>
+    </div>
+</form>
+</body>
+</html>
