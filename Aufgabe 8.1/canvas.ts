@@ -1,4 +1,4 @@
-// Gruppenarbeit mit Debbie, Lisa und Asya
+    // Gruppenarbeit mit Debbie, Lisa und Asya
 namespace Aufgabe4 {
     window.addEventListener("load", handleLoad);
     let crc2: CanvasRenderingContext2D;
