@@ -1,0 +1,20 @@
+body {
+    background: url(Farm.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#dayCounter {
+    margin-left: 600px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#Stock {
+    margin-top: 200px;
+    text-align: center;
+}
+
+#newDay {
+    margin-left: 700px;
+    margin-top: 200px;
+}
