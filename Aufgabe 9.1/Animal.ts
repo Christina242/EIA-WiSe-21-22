@@ -1,29 +1,46 @@
 namespace Farm {
-    
-   export class Animal {
 
-        animal: string;
+    let text: HTMLElement;
+    let songDOMElement: HTMLElement;
+
+    export class Animal {
+
         name: string;
+        animal: string;
         sound: string;
 
-        constructor (_animal: string, _name: string, _sound: string) {
-            this.animal = _animal;
+        constructor(_name: string, _animal: string, _sound: string) {
+            
             this.name = _name;
+            this.animal = _animal;
             this.sound = _sound;
         }
 
-        eat (_foodAmount: number, _amount: number): void {
+        sing(_food: number): void {
+            //console.log("Song Funktion aufgerufen");
+            let nameDOMElement: HTMLElement = <HTMLElement>document.querySelector("#animalName");
+            songDOMElement = <HTMLElement>document.querySelector("#song");
 
-            stockAmount[_amount].amount -= _amount;
-            textDOMElement = <HTMLElement>document.querySelector("#animal" + _amount);
+            nameDOMElement.innerHTML = this.name;
+            songDOMElement.innerHTML = " ``Old MacDonald had a farm, ee-i-ee-i-o." + "<br>" + "<br>" + "And on his farm he had a " + this.animal + " ee-i-ee-i-o. " + "<br>" + "<br>" 
+            + "With a " + (this.sound + " ").repeat(2) + " here, and a " + (this.sound + " ").repeat(2) + "there" + "<br>" + "<br>"
+            + "Here a " + (this.sound) + ", there a " + (this.sound) + ", everywhere a " + (this.sound + " ").repeat(2) + "." 
+            + "<br>" + "<br>" + "Old MacDonald had a farm, ee-i-ee-i-o.``";
+            
+
         }
 
-        sing (_sound: string): void {
-            let whichAnimal: HTMLElement = <HTMLElement>document.querySelector("#animalName");
-            let song: HTMLElement = <HTMLElement>document.querySelector("#songText");
+        eat (_amount: number, _foodPosition: number): void {
+            stock[_foodPosition].amount -= _amount;
+            text = <HTMLElement>document.querySelector("#animal" + _foodPosition);
+            text.innerHTML = "There is <i>" + stock[_foodPosition].amount + "</i>" + "kg " + stock[_foodPosition].name + " left.";
+            
+            let eating: HTMLElement = <HTMLElement>document.querySelector("#eating");
+            eating.innerHTML = "The " + this.animal + " " + this.name + " eats " + stock[_foodPosition].name + ".";
 
-            whichAnimal.innerHTML = this.animal + "  " + this.name;
-            song.innerHTML = "Old MacDonald had a farm " + "<br>" + "And on his farm he had some " + this.animal + "s." + "<br> With a" + (this.sound + " ").repeat(2) + "here <br> and a " + (this.sound + " ").repeat(2) + "there.";
+            //console.log("The " + this.type + "" + this.name + " eats" + stock[_foodPosition].name + ".");
         }
-    }   
+
+        
+    }
 }

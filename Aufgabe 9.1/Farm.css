@@ -2,19 +2,29 @@ body {
     background: url(Farm.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
 }
 
 #dayCounter {
-    margin-left: 600px;
+    margin-left: 700px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+#animalName {
+    text-align: center;
+}
+
+#song {
+    text-align: center;
+}
+
 #Stock {
-    margin-top: 200px;
+    margin-top: 100px;
     text-align: center;
 }
 
 #newDay {
     margin-left: 700px;
-    margin-top: 200px;
+    margin-top: 50px;
 }

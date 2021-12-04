@@ -1,57 +1,91 @@
-// Gruppenarbeit mit Debbie, Lisa und Asya
+/*
+Aufgabe: <Aufgabe_9.1>
+Name: <Christina Gabler>
+Matrikel: <268529>
+Datum: <04.12.2021>
+Quellen: <Zusammengearbeitet mit Debbie, Asya und Lisa >
+*/
+
 namespace Farm {
 
-    export let textDOMElement: HTMLElement;
-
-    export interface Stock {
-        foodName: string;
-        amount: number;
-    }
-
-    export let stockAmount: Stock[] = [{
-        foodName: "hay",
-        amount: 200
-    },
-    {
-        foodName: "cat food",
-        amount: 350
-    },
-    {
-        foodName: "grass",
-        amount: 1000
-    },
-    {
-        foodName: "dog food",
-        amount: 150
-    },
-    {
-        foodName: "corn",
-        amount: 230
-    }];
-
+    let timer: number = 0;
 
     window.addEventListener("load", handleLoad);
-    let crc2: CanvasRenderingContext2D;
 
     function handleLoad(): void {
-        button = document.querySelector("#newDay");
-        button.addEventListener("click", reloadButton);
+        newFarmDay();
+        document.querySelector("#newDay")?.addEventListener("click", newFarmDay);
         // drawCow();
     }
 
-    function newFarmDay(): void {
 
-        let cow: Animal = new Animal("Chris", "Cow", "mooh");
-
-        let cat: Animal = new Animal("Luna", "Cat", "miou");
-
-        let pig: Animal = new Animal("Pia", "Pig", "oink");
-
-        let dog: Animal = new Animal("Dora", "Dog", "wau");
-
-        let chicken: Animal = new Animal("Clara", "Chicken", "gock");
+    export interface Stock {
+        name: string;
+        amount: number;
     }
 
+    export let stock: Stock[] = [{
+
+        name: "Hay",
+        amount: 500
+    },
+    {
+        name: "Cat Food",
+        amount: 20
+    },
+    {
+        name: "Grass",
+        amount: 1000
+    },
+    {
+        name: "Dog Food",
+        amount: 100
+    },
+    {
+        name: "Corn",
+        amount: 55
+    }];
+
+
+
+    function newFarmDay(): void {
+        
+        let cow: Animal = new Animal("Chris", "Cow", "Moo");
+        let cat: Animal = new Animal("Luna", "Cat", "Miau");
+        let pic: Animal = new Animal("Pia", "Pic", "Oink");
+        let dog: Animal = new Animal("Dora", "Dog", "Woof");
+        let chicken: Animal = new Animal("Clara", "Chicken", "Boock");
+
+        setTimeout(function (): void {
+            cow.sing(0);
+            cow.eat(35, 0);
+        },         500);
+
+        setTimeout(function (): void {
+            cat.sing(1);
+            cat.eat(5, 1);
+        },         2500);
+
+        setTimeout(function (): void {
+            pic.sing(2);
+            pic.eat(75, 2);
+        },         5000);
+
+        setTimeout(function (): void {
+            dog.sing(3);
+            dog.eat(4, 3);
+        },         8000);
+
+        setTimeout(function (): void {
+            chicken.sing(4);
+            chicken.eat(5, 4);
+        },         10000);
+
+        let dayCounter: HTMLElement = <HTMLElement>document.querySelector("#dayCounter");
+        timer++;
+        dayCounter.innerHTML = "Day: " + timer;
+        console.log("Day " + timer);
+    }
 
     /**   function drawCow(): void {
   

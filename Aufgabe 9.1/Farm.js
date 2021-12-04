@@ -1,40 +1,70 @@
 "use strict";
-// Gruppenarbeit mit Debbie, Lisa und Asya
+/*
+Aufgabe: <Aufgabe_9.1>
+Name: <Christina Gabler>
+Matrikel: <268529>
+Datum: <04.12.2021>
+Quellen: <Zusammengearbeitet mit Debbie, Asya und Lisa >
+*/
 var Farm;
 (function (Farm) {
-    Farm.stockAmount = [{
-            foodName: "hay",
-            amount: 200
+    let timer = 0;
+    window.addEventListener("load", handleLoad);
+    function handleLoad() {
+        newFarmDay();
+        document.querySelector("#newDay")?.addEventListener("click", newFarmDay);
+        // drawCow();
+    }
+    Farm.stock = [{
+            name: "Hay",
+            amount: 500
         },
         {
-            foodName: "cat food",
-            amount: 350
+            name: "Cat Food",
+            amount: 20
         },
         {
-            foodName: "grass",
+            name: "Grass",
             amount: 1000
         },
         {
-            foodName: "dog food",
-            amount: 150
+            name: "Dog Food",
+            amount: 100
         },
         {
-            foodName: "corn",
-            amount: 230
+            name: "Corn",
+            amount: 55
         }];
-    window.addEventListener("load", handleLoad);
-    let crc2;
-    function handleLoad() {
-        button = document.querySelector("#newDay");
-        button.addEventListener("click", reloadButton);
-        // drawCow();
-    }
     function newFarmDay() {
-        let cow = new Farm.Animal("Chris", "Cow", "mooh");
-        let cat = new Farm.Animal("Luna", "Cat", "miou");
-        let pig = new Farm.Animal("Pia", "Pig", "oink");
-        let dog = new Farm.Animal("Dora", "Dog", "wau");
-        let chicken = new Farm.Animal("Clara", "Chicken", "gock");
+        let cow = new Farm.Animal("Chris", "Cow", "Moo");
+        let cat = new Farm.Animal("Luna", "Cat", "Miau");
+        let pic = new Farm.Animal("Pia", "Pic", "Oink");
+        let dog = new Farm.Animal("Dora", "Dog", "Woof");
+        let chicken = new Farm.Animal("Clara", "Chicken", "Boock");
+        setTimeout(function () {
+            cow.sing(0);
+            cow.eat(35, 0);
+        }, 500);
+        setTimeout(function () {
+            cat.sing(1);
+            cat.eat(5, 1);
+        }, 2500);
+        setTimeout(function () {
+            pic.sing(2);
+            pic.eat(75, 2);
+        }, 5000);
+        setTimeout(function () {
+            dog.sing(3);
+            dog.eat(4, 3);
+        }, 8000);
+        setTimeout(function () {
+            chicken.sing(4);
+            chicken.eat(5, 4);
+        }, 10000);
+        let dayCounter = document.querySelector("#dayCounter");
+        timer++;
+        dayCounter.innerHTML = "Day: " + timer;
+        console.log("Day " + timer);
     }
     /**   function drawCow(): void {
   

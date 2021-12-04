@@ -1,24 +1,34 @@
 "use strict";
 var Farm;
 (function (Farm) {
+    let text;
+    let songDOMElement;
     class Animal {
-        animal;
         name;
+        animal;
         sound;
-        constructor(_animal, _name, _sound) {
-            this.animal = _animal;
+        constructor(_name, _animal, _sound) {
             this.name = _name;
+            this.animal = _animal;
             this.sound = _sound;
         }
-        eat(_foodAmount, _amount) {
-            Farm.stockAmount[_amount].amount -= _amount;
-            Farm.textDOMElement = document.querySelector("#animal" + _amount);
+        sing(_food) {
+            //console.log("Song Funktion aufgerufen");
+            let nameDOMElement = document.querySelector("#animalName");
+            songDOMElement = document.querySelector("#song");
+            nameDOMElement.innerHTML = this.name;
+            songDOMElement.innerHTML = " ``Old MacDonald had a farm, ee-i-ee-i-o." + "<br>" + "<br>" + "And on his farm he had a " + this.animal + " ee-i-ee-i-o. " + "<br>" + "<br>"
+                + "With a " + (this.sound + " ").repeat(2) + " here, and a " + (this.sound + " ").repeat(2) + "there" + "<br>" + "<br>"
+                + "Here a " + (this.sound) + ", there a " + (this.sound) + ", everywhere a " + (this.sound + " ").repeat(2) + "."
+                + "<br>" + "<br>" + "Old MacDonald had a farm, ee-i-ee-i-o.``";
         }
-        sing(_sound) {
-            let whichAnimal = document.querySelector("#animalName");
-            let song = document.querySelector("#songText");
-            whichAnimal.innerHTML = this.animal + "  " + this.name;
-            song.innerHTML = "Old MacDonald had a farm " + "<br>" + "And on his farm he had some " + this.animal + "s." + "<br> With a" + (this.sound + " ").repeat(2) + "here <br> and a " + (this.sound + " ").repeat(2) + "there.";
+        eat(_amount, _foodPosition) {
+            Farm.stock[_foodPosition].amount -= _amount;
+            text = document.querySelector("#animal" + _foodPosition);
+            text.innerHTML = "There is <i>" + Farm.stock[_foodPosition].amount + "</i>" + "kg " + Farm.stock[_foodPosition].name + " left.";
+            let eating = document.querySelector("#eating");
+            eating.innerHTML = "The " + this.animal + " " + this.name + " eats " + Farm.stock[_foodPosition].name + ".";
+            //console.log("The " + this.type + "" + this.name + " eats" + stock[_foodPosition].name + ".");
         }
     }
     Farm.Animal = Animal;
