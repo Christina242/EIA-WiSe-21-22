@@ -1,57 +1,7 @@
-/*
-Aufgabe: <Aufgabe_08.2 Goldener Herbst>
-Name: <Christina Gabler>
-Matrikel: <	268529>
-Datum: <>
-Quellen: <Zusammengearbeitet mit Debbie, Asya, Lisa >
-         <orientiert an Jirkas Code- und Konzeptbeispiel>
-*/
+namespace Aufgabe9_2 {
 
-namespace Herbstlandschaft {
-
-    interface Vector {
-        x: number;
-        y: number;
-    }
-
-    window.addEventListener("load", handleLoad);
-    let crc2: CanvasRenderingContext2D;
-    let backgroundPosition: number = 0.5;
-
-
-    function handleLoad(): void {
-        let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
-        if (!canvas)
-            return;
-        crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
-
-        let horizon: number = crc2.canvas.height * backgroundPosition;
-        let posMountains: Vector = { x: 0, y: horizon };
-
-
-        drawBackground();
-        drawSun({ x: 870, y: 55 });
-        drawCloud({ x: 300, y: 90 }, { x: 250, y: 75 });
-        drawMountains(posMountains, 75, 150, "grey", "white");
-        drawMountains(posMountains, 50, 110, "grey", "lightgrey");
-        drawLeafs();  
-        drawRoundLeafs();
-        
-        drawTrees1({ x: 0, y: 375 }, { x: 100, y: 100 }, 250, 300);
-
-        for (let index: number = 0; index < 8; index++) {
-            drawTree2({ x: Math.random() * 1536, y: Math.random() * 220 });
-        }
-
-        drawBush({ x: 300, y: 300 }, { x: 70, y: 70 }, 250, 300);
-
-        for (let index: number = 0; index < 5; index++) {
-            drawSquirrel({ x: Math.random() * 1536, y: 250 + Math.random() * 320 });
-        }
-    }
-
-    function drawBackground(): void {
-        console.log("Background");
+    export function drawBackground(): void {
+        // console.log("Background");
 
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
         gradient.addColorStop(0, "#A7D3FF");
@@ -61,9 +11,8 @@ namespace Herbstlandschaft {
         crc2.fillStyle = gradient;
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
     }
-
-    function drawSun(_position: Vector): void {
-        console.log("Sun", _position);
+    export function drawSun(_position: Vector): void {
+        // console.log("Sun", _position);
 
         let r1: number = 30;
         let r2: number = 100;
@@ -80,35 +29,8 @@ namespace Herbstlandschaft {
         crc2.restore();
     }
 
-    function drawCloud(_position: Vector, _size: Vector): void {
-        console.log("Cloud", _position, _size);
-
-        let nParticles: number = 45;
-        let radiusParticle: number = 50;
-        let particle: Path2D = new Path2D();
-        let gradient: CanvasGradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticle);
-
-        particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);
-        gradient.addColorStop(0, "HSLA(0, 100%, 100%, 0.5)");
-        gradient.addColorStop(1, "HSLA(0, 100%, 100%, 0)");
-
-        crc2.save();
-        crc2.translate(_position.x, _position.y);
-        crc2.fillStyle = gradient;
-
-        for (let drawn: number = 0; drawn < nParticles; drawn++) {
-            crc2.save();
-            let x: number = (Math.random() - 0.5) * _size.x;
-            let y: number = - (Math.random() * _size.y);
-            crc2.translate(x, y);
-            crc2.fill(particle);
-            crc2.restore();
-        }
-        crc2.restore();
-    }
-
-    function drawMountains(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
-        console.log("Mountains", _position, _min, _max);
+    export function drawMountains(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
+        //console.log("Mountains", _position, _min, _max);
         let stepMin: number = 50;
         let stepMax: number = 50;
         let x: number = 0;
@@ -139,7 +61,7 @@ namespace Herbstlandschaft {
         crc2.restore();
     }
 
-    function drawBush(_position: Vector, _size: Vector, _min: number, _max: number): void {
+    export function drawBush(_position: Vector, _size: Vector, _min: number, _max: number): void {
         let stepMin: number = 50;
         let stepMax: number = 150;
         let x: number = 0;
@@ -177,7 +99,7 @@ namespace Herbstlandschaft {
         while (x < crc2.canvas.width);
     }
 
-    function drawTrees1(_position2: Vector, _size2: Vector, _min2: number, _max2: number): void {
+    export function drawTrees1(_position2: Vector, _size2: Vector, _min2: number, _max2: number): void {
         let stepMin: number = 50;
         let stepMax: number = 100;
         let x: number = -10;
@@ -226,7 +148,7 @@ namespace Herbstlandschaft {
         while (x < crc2.canvas.width);
     }
 
-    function drawTree2(_position: Vector): void {
+    export function drawTree2(_position: Vector): void {
 
         crc2.resetTransform();
         crc2.save();
@@ -265,7 +187,7 @@ namespace Herbstlandschaft {
         crc2.restore();
     }
 
-    function drawSquirrel(_position: Vector): void {
+    export function drawSquirrel(_position: Vector): void {
 
         crc2.fillStyle = "#B47D49";
         crc2.resetTransform();
@@ -338,7 +260,7 @@ namespace Herbstlandschaft {
         crc2.restore();
     }
 
-    function drawLeafs(): void {
+    export function drawLeafs(): void {
         let nLeafs: number = 50;
         let rLeafs: number = 15;
 
@@ -347,13 +269,13 @@ namespace Herbstlandschaft {
             let x: number = Math.random() * 1536;
             let y: number = Math.random() * 722;
 
-            leafs.arc( x, y, rLeafs, 199, 50 * Math.PI);
+            leafs.arc(x, y, rLeafs, 199, 50 * Math.PI);
             crc2.fillStyle = "#C3AE2E";
             crc2.fill(leafs);
         }
     }
 
-    function drawRoundLeafs(): void {
+    export function drawRoundLeafs(): void {
         let nRoundLeafs: number = 50;
 
         for (let draw: number = 0; draw < nRoundLeafs; draw++) {
