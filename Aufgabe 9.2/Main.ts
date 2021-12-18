@@ -6,6 +6,8 @@ Datum: <>
 Quellen: <Zusammengearbeitet mit Debbie, Asya, Lisa >
 */
 
+// Leider nicht fertig geworden, da für den Test gelernt
+
 namespace Aufgabe9_2 {
 
     export let crc2: CanvasRenderingContext2D;
@@ -64,9 +66,9 @@ namespace Aufgabe9_2 {
 
         for (let i: number = 0; i < 20; i++) {
 
-            let randomLeafType: number = Math.floor(Math.random() * 2);            
+            let randomLeaf: number = Math.floor(Math.random() * 2);            
 
-            let leaf: Leaf = new Leaf(randomLeafType);
+            let leaf: Leaf = new Leaf(1, 10, 40, randomLeaf());
             leafs.push(leaf);
             //leafs.push(leaf2);
             leaf.drawLeafs();

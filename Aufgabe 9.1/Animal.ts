@@ -16,7 +16,7 @@ namespace Farm {
             
         }
 
-        sing(_food: number): void {
+        sing(_sound: string): void {
             let nameDOMElement: HTMLElement = <HTMLElement>document.querySelector("#animalName");
             songDOMElement = <HTMLElement>document.querySelector("#song");
 

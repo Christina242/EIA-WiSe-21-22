@@ -56,7 +56,7 @@ namespace Farm {
         let cow: Animal = new Animal("Chris", "Cow", "Moho");
         let cat: Animal = new Animal("Clara", "Cat", "Miau");
         let pig: Animal = new Animal("Leo", "Donkey", "Oink");
-        let dog: Animal = new Animal("Dora", "Chicken", "wook");
+        let dog: Animal = new Animal("Dora", "Chicken", "Woof");
         let chicken: Animal = new Animal("Claus", "Dog", "Bock");
 
         setTimeout(function (): void {
