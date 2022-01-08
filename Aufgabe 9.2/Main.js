@@ -6,6 +6,7 @@ Matrikel: <268529>
 Datum: <>
 Quellen: <Zusammengearbeitet mit Debbie, Asya, Lisa >
 */
+// Leider nicht fertig geworden, da für den Test gelernt
 var Aufgabe9_2;
 (function (Aufgabe9_2) {
     Aufgabe9_2.backgroundPosition = 0.5;
@@ -46,8 +47,8 @@ var Aufgabe9_2;
     }
     function createLeaf() {
         for (let i = 0; i < 20; i++) {
-            let randomLeafType = Math.floor(Math.random() * 2);
-            let leaf = new Aufgabe9_2.Leaf(randomLeafType);
+            let randomLeaf = Math.floor(Math.random() * 2);
+            let leaf = new Aufgabe9_2.Leaf(1, 10, 40, randomLeaf());
             leafs.push(leaf);
             //leafs.push(leaf2);
             leaf.drawLeafs();

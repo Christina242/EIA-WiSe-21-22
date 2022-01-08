@@ -38,7 +38,7 @@ var Farm;
         let cow = new Farm.Animal("Chris", "Cow", "Moho");
         let cat = new Farm.Animal("Clara", "Cat", "Miau");
         let pig = new Farm.Animal("Leo", "Donkey", "Oink");
-        let dog = new Farm.Animal("Dora", "Chicken", "wook");
+        let dog = new Farm.Animal("Dora", "Chicken", "Woof");
         let chicken = new Farm.Animal("Claus", "Dog", "Bock");
         setTimeout(function () {
             cow.sing(0);

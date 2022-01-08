@@ -1,6 +1,6 @@
 "use strict";
-var Aufgabe9_2;
-(function (Aufgabe9_2) {
+var Aufgabe10_2;
+(function (Aufgabe10_2) {
     class Leaf {
         posX;
         posY;
@@ -30,8 +30,8 @@ var Aufgabe9_2;
                     let x = Math.random() * 1536;
                     let y = Math.random() * 722;
                     leafs.arc(x, y, rLeafs, 199, 50 * Math.PI);
-                    Aufgabe9_2.crc2.fillStyle = "#C3AE2E";
-                    Aufgabe9_2.crc2.fill(leafs);
+                    Aufgabe10_2.crc2.fillStyle = "#C3AE2E";
+                    Aufgabe10_2.crc2.fill(leafs);
                 }
             }
             function drawRoundLeafs() {
@@ -41,12 +41,12 @@ var Aufgabe9_2;
                     let x = Math.random() * 1536;
                     let y = Math.random() * 722;
                     roundLeafs.ellipse(x, y, 8, 20, 10, 10, 20);
-                    Aufgabe9_2.crc2.fillStyle = "#446C31";
-                    Aufgabe9_2.crc2.fill(roundLeafs);
+                    Aufgabe10_2.crc2.fillStyle = "#446C31";
+                    Aufgabe10_2.crc2.fill(roundLeafs);
                 }
             }
         }
     }
-    Aufgabe9_2.Leaf = Leaf;
-})(Aufgabe9_2 || (Aufgabe9_2 = {}));
+    Aufgabe10_2.Leaf = Leaf;
+})(Aufgabe10_2 || (Aufgabe10_2 = {}));
 //# sourceMappingURL=Leaf.js.map
